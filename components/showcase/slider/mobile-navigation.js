@@ -18,14 +18,18 @@ function MobileNavigation({ prev, item }) {
             height: auto;
             outline: none;
             cursor: pointer;
-            padding-top: 25px;
-            padding-bottom: 25px;
+            padding-top: 15px;
+            padding-bottom: 15px;
             padding-left: 50px;
             padding-right: 50px;
           }
 
-          a :global(svg) :global(g) {
-            stroke: #ec008c;
+          a :global(svg) {
+            width: 50px;
+            height: 50px;
+          }
+          a :global(svg) :global(path) {
+            fill: #ec008c !important;
           }
         `}</style>
       </a>
