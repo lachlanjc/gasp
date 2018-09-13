@@ -1,7 +1,7 @@
 import Header from '../components/header'
 import Footer from '../components/footer'
 import NProgress from 'nprogress'
-import debounce from 'lodash.debounce'
+import { debounce } from 'lodash'
 import RouterEvents from '../lib/router-events'
 
 const start = debounce(NProgress.start, 200)
