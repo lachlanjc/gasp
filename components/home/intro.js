@@ -3,7 +3,7 @@ import RoundButton from '../round-button'
 const Intro = () => (
   <section>
     <h1>Gasp!</h1>
-    <h2>A guide to your your body, your mind, and being alive.</h2>
+    <h2>A guide to your body, your mind, and being alive.</h2>
     <p>
       A zine from your friends at Planned Parenthood Generation Action @ Penn
       State University.
