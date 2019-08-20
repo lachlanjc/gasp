@@ -13,7 +13,7 @@ const facebookURL = url => `https://www.facebook.com/sharer/sharer.php?u=${url}`
 export default () => (
   <header>
     <div className="header__content">
-      <Link href="/" prefetch>
+      <Link href="/">
         <a className="logo">Gasp!</a>
       </Link>
       <div className="social">

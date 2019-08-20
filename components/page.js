@@ -20,10 +20,6 @@ export default ({ bg = '#fff', color = '#000', children }) => (
     <Header />
     <main>{children}</main>
     <Footer />
-    <link
-      href="https://fonts.googleapis.com/css?family=Nunito:400,800,900i"
-      rel="stylesheet"
-    />
     <style jsx global>{`
       html {
         height: 100%;
