@@ -16,17 +16,17 @@ const Slider = ({ currentSlide = {}, previousSlide = {}, nextSlide }) => (
         <Navigation previous item={previousSlide} />
       </div>
       <div className="slider">
-        <Image
-          src={currentSlide.src}
-          margin={0}
-          renderImage={props => (
-            <TransitionGroup>
-              <CSSTransition key={props.src} timeout={500} classNames="fade">
-                <ImageLoader item={currentSlide} />
-              </CSSTransition>
-            </TransitionGroup>
-          )}
-        />
+        <Image src={currentSlide.src} margin={0}>
+          <TransitionGroup>
+            <CSSTransition
+              key={currentSlide.src}
+              timeout={512}
+              classNames="fade"
+            >
+              <ImageLoader item={currentSlide} />
+            </CSSTransition>
+          </TransitionGroup>
+        </Image>
       </div>
       <div className="nav next">
         <Navigation item={nextSlide} />
@@ -78,9 +78,10 @@ const Slider = ({ currentSlide = {}, previousSlide = {}, nextSlide }) => (
         margin: 0 60px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.0625),
           0px 20px 40px rgba(0, 0, 0, 0.125);
-        max-width: 782px;
+        max-width: 892px;
         border-radius: 8px;
         overflow: hidden;
+        line-height: 0;
       }
 
       .slider .slick-slider {

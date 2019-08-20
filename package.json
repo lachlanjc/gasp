@@ -1,7 +1,9 @@
 {
-  "name": "gasp",
+  "name": "@lachlanjc/gasp",
   "description": "Gasp! zine website",
   "version": "1.0.0",
+  "author": "Lachlan Campbell <lachlan@hackpenn.com>",
+  "license": "MIT",
   "scripts": {
     "dev": "next",
     "build": "next build && next export",
@@ -10,10 +12,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lachlanjc/gasp.git"
+    "url": "https://github.com/lachlanjc/gasp.git"
   },
-  "author": "Lachlan Campbell",
-  "license": "MIT",
   "dependencies": {
     "intersection-observer": "0.7.0",
     "lodash": "4.17.15",

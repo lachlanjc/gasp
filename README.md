@@ -1,7 +1,7 @@
 # Gasp! zine website
 
-https://gasp.netlify.com
+A free, comprehensive intro sex ed zine from your friends at Planned Parenthood Generation Action @ Penn State University.
 
-Based on the [Next.js site](https://github.com/zeit/next-site).
+[**gasp.now.sh**](https://gasp.now.sh)
 
-MIT license
+MIT License

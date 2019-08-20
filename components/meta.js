@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 export default ({
   title = 'Gasp! – a sex ed zine from Planned Parenthood',
-  description = 'A free, comprehensive intro sex ed zine from your friends at Planned Parenthood.',
+  description = 'A free, comprehensive intro sex ed zine from your friends at Planned Parenthood Generation Action @ Penn State University.',
   image = 'https://gasp.now.sh/static/card.png',
   url = ''
 }) => (

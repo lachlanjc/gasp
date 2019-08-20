@@ -1,4 +1,5 @@
 import React from 'react'
+import { useAmp } from 'next/amp'
 import Link from 'next/link'
 import Twitter from './icons/twitter'
 import Facebook from './icons/facebook'
@@ -10,11 +11,12 @@ const twitterURL = (text, url) =>
     .join('%20')}&url=${url}`
 const facebookURL = url => `https://www.facebook.com/sharer/sharer.php?u=${url}`
 
-      <Link href="/">
 export default () => {
+  const isAmp = useAmp()
   return (
     <header>
       <div className="header__content">
+        <Link href={isAmp ? '/?amp=1' : '/'}>
           <a className="logo">Gasp!</a>
         </Link>
         <div className="social">

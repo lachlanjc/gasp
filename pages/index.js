@@ -4,7 +4,9 @@ import Meta from '../components/meta'
 import Intro from '../components/home/intro'
 import Screen from '../components/screen'
 
-const Index = () => (
+export const config = { amp: true }
+
+export default () => (
   <Page>
     <Meta />
     <Screen offset={128}>
@@ -12,5 +14,3 @@ const Index = () => (
     </Screen>
   </Page>
 )
-
-export default Index

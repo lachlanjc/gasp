@@ -1,7 +1,8 @@
+import { useAmp } from 'next/amp'
 import RoundButton from '../round-button'
 
-      <RoundButton color="primary" href="/read">
 const Intro = () => {
+  const isAmp = useAmp()
   return (
     <section>
       <h1>Gasp!</h1>
@@ -14,6 +15,7 @@ const Intro = () => {
         <RoundButton color="white" href="/static/gasp.pdf">
           Download
         </RoundButton>
+        <RoundButton color="primary" href={isAmp ? '/read?amp=1' : '/read'}>
           Read now »
         </RoundButton>
       </div>

@@ -1,61 +1,43 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
+import { useAmp } from 'next/amp'
 
-class ImageLoader extends React.Component {
-  state = {
-    loaded: false
-  }
+const ImageLoader = ({ item, className, ...props }) => {
+  const imageRef = useRef(null)
+  const [loaded, setLoaded] = useState(false)
 
-  constructor(props) {
-    super(props)
-    this.imageRef = React.createRef()
-  }
+  const node = imageRef.current
+  if (node) node.onload = () => setLoaded(true)
 
-  handleLoaded = () => {
-    this.setState({ loaded: true })
-  }
+  const isAmp = useAmp()
+  const img = { ref: imageRef, src: item.src }
 
-  componentDidMount() {
-    const node = this.imageRef.current
-
-    node.onload = this.handleLoaded
-    if (node.complete && !this.state.loaded) {
-      this.handleLoaded()
-    }
-  }
-
-  render() {
-    const { item, className } = this.props
-    const { src } = item
-    const { loaded } = this.state
-    return (
-      <div className={className}>
-        <img
-          className={`src ${loaded ? 'loaded' : 'loading'}`}
-          ref={this.imageRef}
-          src={src}
-        />
-        <style jsx>{`
-          @keyframes show {
-            0% {
-              opacity: 0;
-            }
-            100% {
-              opacity: 1;
-            }
-          }
-          .src {
-            transition: opacity 0.2s ease;
-          }
-          .loading {
+  return (
+    <div
+      className={`src ${loaded ? 'loaded' : 'loading'} ${className}`}
+      {...props}
+    >
+      {isAmp ? <amp-img {...img} layout="fill" /> : <img {...img} />}
+      <style jsx>{`
+        @keyframes show {
+          0% {
             opacity: 0;
           }
-          .loaded {
+          100% {
             opacity: 1;
           }
-        `}</style>
-      </div>
-    )
-  }
+        }
+        .src {
+          transition: opacity 0.2s ease;
+        }
+        .loading {
+          opacity: 0;
+        }
+        .loaded {
+          opacity: 1;
+        }
+      `}</style>
+    </div>
+  )
 }
 
 export default ImageLoader
