@@ -7,7 +7,6 @@
   "scripts": {
     "dev": "next",
     "build": "next build && next export",
-    "now-build": "next build && next export",
     "start": "next start"
   },
   "repository": {
