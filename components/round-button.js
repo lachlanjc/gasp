@@ -22,24 +22,38 @@ export default ({ children, color, href, className }) => (
           line-height: 24px;
           height: 24px;
         }
-        .white {
+
+        a.white {
           background-color: #ffffff;
           color: #666;
           transition: all 0.2s ease;
         }
-        .primary {
+        a.primary {
           background-color: #ec008c;
           color: #ffffff;
           font-weight: 800;
           transition: all 0.2s ease;
         }
+        a.primary:focus,
         a.white:hover {
           background-color: #666;
           color: #ffffff;
         }
+        a.primary:focus,
         a.primary:hover {
           background-color: #ffffff;
           color: #ec008c;
+        }
+        @media (prefers-color-scheme: dark) {
+          a.white {
+            background-color: #333;
+            color: #eaeaea;
+          }
+          a.primary:focus,
+          a.primary:hover {
+            background-color: #eaeaea;
+            color: #ec008c;
+          }
         }
       `}</style>
     </a>

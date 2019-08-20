@@ -12,21 +12,35 @@ export default () => (
       footer {
         background-color: #fafafa;
         border-top: 1px solid #eaeaea;
-        border-bottom: 1px solid #eaeaea;
         font-size: 14px;
         margin-top: 50px;
       }
 
       a {
         text-decoration: none;
-        color: #999999;
+        color: #666;
         font-size: 1.4rem;
         padding: 15px 0;
         transition: color 0.2s ease;
       }
+      a:hover,
+      a:focus {
+        color: #222;
+      }
 
-      a:hover {
-        color: black;
+      @media (prefers-color-scheme: dark) {
+        footer {
+          background-color: #111;
+          border-top-color: #222;
+        }
+
+        a {
+          color: #aaa;
+        }
+        a:hover,
+        a:focus {
+          color: #eaeaea;
+        }
       }
 
       .container {

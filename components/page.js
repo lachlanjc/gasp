@@ -15,7 +15,7 @@ RouterEvents.on('routeChangeError', () => {
   NProgress.done()
 })
 
-export default ({ bg = '#fff', color = '#000', children }) => (
+export default ({ bg = '#fff', color = '#222', children }) => (
   <div>
     <Header />
     <main>{children}</main>
@@ -52,6 +52,14 @@ export default ({ bg = '#fff', color = '#000', children }) => (
       body {
         background-color: ${bg};
         color: ${color};
+      }
+
+      @media (prefers-color-scheme: dark) {
+        html,
+        body {
+          background-color: ${color};
+          color: ${bg};
+        }
       }
 
       ::selection {

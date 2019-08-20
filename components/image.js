@@ -45,11 +45,15 @@ class Image extends Component {
             position: absolute;
             top: 0;
             width: 100%;
+        @media (prefers-color-scheme: dark) {
+          .root {
+            filter: invert(1) hue-rotate(90deg);
           }
         `}</style>
       </figure>
     )
   }
+        }
 }
 
 export default Image
