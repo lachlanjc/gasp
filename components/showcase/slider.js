@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
+import Meta from '../meta'
 import Image from '../image'
 import ImageLoader from './slider/image-loader'
 import SlideInformation from './slider/slide-information'
@@ -9,6 +10,7 @@ import MobileNavigation from './slider/mobile-navigation'
 
 const Slider = ({ currentSlide = {}, previousSlide = {}, nextSlide }) => (
   <section>
+    <Meta title={`${currentSlide.title} – Gasp!`} url={currentSlide.link} />
     <div className="container">
       <div className="nav prev">
         <Navigation previous item={previousSlide} />
