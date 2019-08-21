@@ -11,6 +11,7 @@ const SlideInformation = ({ title, href }) => (
         font-size: 36px;
         font-style: normal;
         font-weight: 800;
+        margin-top: 0;
         margin-bottom: 0;
       }
     `}</style>
