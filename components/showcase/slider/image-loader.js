@@ -7,6 +7,8 @@ const ImageLoader = ({ item, className, ...props }) => {
 
   const node = imageRef.current
   if (node) node.onload = () => setLoaded(true)
+  // within a second just show it
+  setTimeout(() => setLoaded(true), 1024)
 
   const isAmp = useAmp()
   const img = { ref: imageRef, src: item.src }
