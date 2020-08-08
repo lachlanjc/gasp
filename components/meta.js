@@ -1,9 +1,9 @@
 import Head from 'next/head'
 
-export default ({
+const Meta = ({
   title = 'Gasp! – a sex ed zine from Planned Parenthood',
   description = 'A free, comprehensive intro sex ed zine from your friends at Planned Parenthood Generation Action @ Penn State University.',
-  image = 'https://gasp.now.sh/static/card.png',
+  image = 'https://gasp.vercel.app/card.png',
   url = ''
 }) => (
   <Head>
@@ -21,3 +21,5 @@ export default ({
     <meta name="twitter:image" content={image} />
   </Head>
 )
+
+export default Meta

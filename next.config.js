@@ -1,15 +1,17 @@
-const { mapping } = require('./showcase-manifest')
-
-const routes = Object.keys(mapping)
-
 module.exports = {
-  exportPathMap(defaultPathMap) {
-    for (const route of routes) {
-      defaultPathMap[`/read/${route}`] = {
-        page: '/read',
-        query: { item: route }
+  trailingSlash: true,
+  async redirects() {
+    return [
+      {
+        source: '/read',
+        destination: '/read/cover',
+        permanent: false
+      },
+      {
+        source: '/static/gasp.pdf',
+        destination: '/gasp.pdf',
+        permanent: true
       }
-    }
-    return defaultPathMap
+    ]
   }
 }

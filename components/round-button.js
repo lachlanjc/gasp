@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
-export default ({ children, color, href, className }) => (
+const RoundButton = ({ children, color, href, className, ...props }) => (
   <Link href={href}>
-    <a className={`${className ? className + ' ' : ''}${color}`}>
+    <a className={`${className ? className + ' ' : ''}${color}`} {...props}>
       <span>{children}</span>
       <style jsx>{`
         a {
@@ -59,3 +59,5 @@ export default ({ children, color, href, className }) => (
     </a>
   </Link>
 )
+
+export default RoundButton
