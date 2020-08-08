@@ -1,8 +1,8 @@
-import Page from '~/components/page'
-import Slider from '~/components/showcase/slider'
+import Page from '../../components/page'
+import Slider from '../../components/showcase/slider'
 import { sortOrder, mapping } from '../../showcase-manifest'
 import { useRouter } from 'next/router'
-import Screen from '~/components/screen'
+import Screen from '../../components/screen'
 
 export const config = { amp: 'hybrid' }
 
