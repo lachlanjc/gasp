@@ -1,7 +1,7 @@
 export default () => (
   <footer>
     <div className="container">
-      <a href="https://lachlanjc.me" target="_blank">
+      <a href="https://lachlanjc.com" target="_blank">
         Site by Lachlan Campbell
       </a>
       <a className="github" href="https://github.com/lachlanjc/gasp">
