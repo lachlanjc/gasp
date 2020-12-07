@@ -1,4 +1,4 @@
-export default () => (
+const Footer = () => (
   <footer>
     <div className="container">
       <a href="https://lachlanjc.com" target="_blank">
@@ -63,3 +63,5 @@ export default () => (
     `}</style>
   </footer>
 )
+
+export default Footer

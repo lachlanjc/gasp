@@ -15,7 +15,7 @@ RouterEvents.on('routeChangeError', () => {
   NProgress.done()
 })
 
-export default ({ bg = '#fff', color = '#222', children }) => (
+const Page = ({ bg = '#fff', color = '#222', children }) => (
   <div>
     <Header />
     <main>{children}</main>
@@ -86,3 +86,5 @@ export default ({ bg = '#fff', color = '#222', children }) => (
     `}</style>
   </div>
 )
+
+export default Page

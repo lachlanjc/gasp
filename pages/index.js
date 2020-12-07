@@ -6,7 +6,7 @@ import Screen from '../components/screen'
 
 export const config = { amp: true }
 
-export default () => (
+const Index = () => (
   <Page>
     <Meta />
     <Screen offset={128}>
@@ -14,3 +14,5 @@ export default () => (
     </Screen>
   </Page>
 )
+
+export default Index

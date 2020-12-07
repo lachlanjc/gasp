@@ -11,7 +11,7 @@ const twitterURL = (text, url) =>
     .join('%20')}&url=${url}`
 const facebookURL = url => `https://www.facebook.com/sharer/sharer.php?u=${url}`
 
-export default () => {
+const Header = () => {
   const isAmp = useAmp()
   return (
     <header>
@@ -77,3 +77,5 @@ export default () => {
     </header>
   )
 }
+
+export default Header
