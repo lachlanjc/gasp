@@ -1,4 +1,3 @@
-import Page from '../../components/page'
 import Slider from '../../components/showcase/slider'
 import { sortOrder, mapping } from '../../showcase-manifest'
 import { useRouter } from 'next/router'
@@ -61,15 +60,13 @@ const Showcase = () => {
     item
   )
   return (
-    <Page bg="#fafafa">
-      <Screen offset={144}>
-        <Slider
-          currentSlide={currentSlide}
-          previousSlide={previousSlide}
-          nextSlide={nextSlide}
-        />
-      </Screen>
-    </Page>
+    <Screen offset={144}>
+      <Slider
+        currentSlide={currentSlide}
+        previousSlide={previousSlide}
+        nextSlide={nextSlide}
+      />
+    </Screen>
   )
 }
 

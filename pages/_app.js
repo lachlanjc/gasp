@@ -1,8 +1,8 @@
-import React from 'react'
 import Head from 'next/head'
+import Page from '../components/page'
 
 const App = ({ Component, pageProps }) => (
-  <>
+  <Page>
     <Head>
       <meta name="theme-color" content="#ec008c" />
       <link
@@ -11,7 +11,7 @@ const App = ({ Component, pageProps }) => (
       />
     </Head>
     <Component {...pageProps} />
-  </>
+  </Page>
 )
 
 export default App

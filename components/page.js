@@ -1,21 +1,7 @@
 import Header from '../components/header'
 import Footer from '../components/footer'
-import NProgress from 'nprogress'
-import { debounce } from 'lodash'
-import RouterEvents from '../lib/router-events'
 
-const start = debounce(NProgress.start, 200)
-RouterEvents.on('routeChangeStart', start)
-RouterEvents.on('routeChangeComplete', url => {
-  start.cancel()
-  NProgress.done()
-})
-RouterEvents.on('routeChangeError', () => {
-  start.cancel()
-  NProgress.done()
-})
-
-const Page = ({ bg = '#fff', color = '#222', children }) => (
+const Page = ({ bg = '#fafafa', color = '#222', children }) => (
   <div>
     <Header />
     <main>{children}</main>
@@ -65,23 +51,6 @@ const Page = ({ bg = '#fff', color = '#222', children }) => (
       ::selection {
         background-color: #ec008c;
         color: #fff;
-      }
-
-      .prevent-scroll {
-        overflow: hidden;
-      }
-
-      #nprogress {
-        pointer-events: none;
-      }
-      #nprogress .bar {
-        position: fixed;
-        z-index: 2000;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background: black;
       }
     `}</style>
   </div>

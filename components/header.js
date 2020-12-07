@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Twitter from './icons/twitter'
 import Facebook from './icons/facebook'
 
-const link = 'https://gasp.netlify.com'
+const link = 'https://gasp.now.sh'
 const twitterURL = (text, url) =>
   `https://twitter.com/intent/tweet?text=${text
     .split(' ')
@@ -31,7 +31,7 @@ const Header = () => {
 
       <style jsx>{`
         header {
-          min-height: 144px;
+          min-height: 96px;
           width: 100%;
           display: flex;
           align-items: center;

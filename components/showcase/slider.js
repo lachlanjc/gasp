@@ -1,9 +1,5 @@
-import React from 'react'
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
-
 import Meta from '../meta'
-import Image from '../image'
-import ImageLoader from './slider/image-loader'
+import Image from 'next/image'
 import SlideInformation from './slider/slide-information'
 import Navigation from './slider/navigation'
 import MobileNavigation from './slider/mobile-navigation'
@@ -16,17 +12,13 @@ const Slider = ({ currentSlide = {}, previousSlide = {}, nextSlide }) => (
         <Navigation previous item={previousSlide} />
       </div>
       <div className="slider">
-        <Image src={currentSlide.src} margin={0}>
-          <TransitionGroup>
-            <CSSTransition
-              key={currentSlide.src}
-              timeout={512}
-              classNames="fade"
-            >
-              <ImageLoader item={currentSlide} />
-            </CSSTransition>
-          </TransitionGroup>
-        </Image>
+        <Image
+          src={currentSlide.src}
+          key={currentSlide.src}
+          width={2048}
+          height={1405}
+          alt={currentSlide.title}
+        />
       </div>
       <div className="nav next">
         <Navigation item={nextSlide} />
@@ -82,6 +74,12 @@ const Slider = ({ currentSlide = {}, previousSlide = {}, nextSlide }) => (
         border-radius: 8px;
         overflow: hidden;
         line-height: 0;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .slider :global(img) {
+          filter: invert(1) hue-rotate(180deg);
+        }
       }
 
       .slider .slick-slider {

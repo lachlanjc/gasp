@@ -7,12 +7,14 @@ const Intro = () => (
     <p>
       A zine from your friends at Planned Parenthood Generation Action @ Penn
       State University.
+      <br />
+      Because sex ed is too important to ignore.
     </p>
     <div>
       <RoundButton color="white" href="/static/gasp.pdf" download="gasp.pdf">
         Download
       </RoundButton>
-      <RoundButton color="primary" href="/read/cover">
+      <RoundButton color="primary" href="/read/cover/">
         Read now »
       </RoundButton>
     </div>

@@ -1,44 +1,24 @@
 import ShowcaseLink from './showcase-link'
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
-import Image from '../../image'
+import Image from 'next/image'
 import ArrowPrevious from '../../icons/arrow-previous'
 import ArrowNext from '../../icons/arrow-next'
-import ImageLoader from './image-loader'
 
 const Navigation = ({ previous, item }) => (
   <ShowcaseLink item={item}>
     <a className={`button ${previous ? 'prev' : 'next'}`}>
       <div className="thumbnail">
-        <Image width={892 / 2} height={612 / 2} src={item.src} margin={0}>
-          <TransitionGroup>
-            <CSSTransition key={item.src} timeout={500} classNames="fade">
-              <ImageLoader item={item} />
-            </CSSTransition>
-          </TransitionGroup>
-        </Image>
+        <Image
+          src={item.src}
+          key={item.src}
+          width={446}
+          height={306}
+          alt={item.title}
         />
       </div>
       <div className="arrow">
         {previous ? <ArrowPrevious /> : <ArrowNext />}
       </div>
       <style jsx>{`
-        a :global(.fade-enter) {
-          opacity: 0.01;
-        }
-
-        a :global(.fade-enter.fade-enter-active) {
-          opacity: 1;
-          transition: opacity 500ms ease-in;
-        }
-
-        a :global(.fade-exit) {
-          opacity: 1;
-        }
-
-        a :global(.fade-exit.fade-exit-active) {
-          opacity: 0.01;
-          transition: opacity 300ms ease-in;
-        }
         a {
           width: 100%;
           height: 100%;
@@ -48,11 +28,8 @@ const Navigation = ({ previous, item }) => (
           cursor: pointer;
           position: relative;
           overflow: hidden;
+          line-height: 0;
           box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.12);
-        }
-
-        a :global(img) {
-          width: 100%;
         }
 
         .thumbnail {
@@ -60,8 +37,8 @@ const Navigation = ({ previous, item }) => (
           position: absolute;
           top: 0;
           transition: all 0.2s ease;
+          overflow: hidden;
         }
-
         .thumbnail::after {
           content: '';
           position: absolute;
@@ -69,17 +46,27 @@ const Navigation = ({ previous, item }) => (
           left: 0;
           width: 100%;
           height: 100%;
-          background: rgba(0, 0, 0, 0.3);
+          background-color: rgba(0, 0, 0, 0.3);
         }
+
+        @media (prefers-color-scheme: dark) {
+          .thumbnail :global(img) {
+            filter: invert(1) hue-rotate(180deg);
+          }
+        }
+
         .button:hover .thumbnail {
           transform: scale(1.4);
         }
         .prev .thumbnail {
+          border-radius: 0 6px 6px 0;
           left: 0;
         }
         .next .thumbnail {
+          border-radius: 6px 0 0 6px;
           right: 0;
         }
+
         .arrow {
           position: absolute;
         }
