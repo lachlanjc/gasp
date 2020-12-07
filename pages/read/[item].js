@@ -3,8 +3,6 @@ import { sortOrder, mapping } from '../../showcase-manifest'
 import { useRouter } from 'next/router'
 import Screen from '../../components/screen'
 
-export const config = { amp: 'hybrid' }
-
 // Returns the right slide index based on the current position
 function normalizeSlideIndex(arr, index, fn) {
   // The logic doesn't care about the implementation, just the result
